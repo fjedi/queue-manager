@@ -1,7 +1,7 @@
 {
-  "name": "@fjedi/npm-package-template",
-  "version": "1.1.0",
-  "description": "NPM package template",
+  "name": "@fjedi/queue-manager",
+  "version": "1.0.0",
+  "description": "Wrapper around Bull queue-manager",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
   "files": [
@@ -26,7 +26,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fjedi/npm-package-template.git"
+    "url": "git+https://github.com/fjedi/queue-manager.git"
   },
   "keywords": [
     "fjedi"
@@ -34,14 +34,20 @@
   "author": "Alexander Radyushin <r.alex.andr@ya.ru> (https://fjedi.com)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fjedi/npm-package-template/issues"
+    "url": "https://github.com/fjedi/queue-manager/issues"
   },
-  "homepage": "https://github.com/fjedi/npm-package-template#readme",
-  "dependencies": {},
+  "homepage": "https://github.com/fjedi/queue-manager#readme",
+  "dependencies": {
+    "@types/bluebird": "3.5.33",
+    "@types/bull": "3.14.4",
+    "@types/lodash": "4.14.165",
+    "bluebird": "3.7.2",
+    "bull": "3.18.1",
+    "lodash": "4.17.20"
+  },
   "devDependencies": {
     "@types/expect": "24.3.0",
     "@types/jest": "26.0.15",
-    "@types/lodash": "4.14.164",
     "@types/node": "14.14.6",
     "@typescript-eslint/eslint-plugin": "4.6.1",
     "@typescript-eslint/parser": "4.6.1",
