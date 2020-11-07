@@ -5,11 +5,19 @@ on:
 jobs:
   publish:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
+        redis-version: [6]
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
         with:
           node-version: 12
+      - name: Start Redis
+        uses: supercharge/redis-github-action@1.1.0
+        with:
+          redis-version: ${{ matrix.redis-version }}
       - run: npm ci
       - run: npm run lint
       - run: npm test
