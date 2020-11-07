@@ -1,0 +1,72 @@
+{
+  "name": "@fjedi/npm-package-template",
+  "version": "1.1.0",
+  "description": "NPM package template",
+  "main": "./lib/cjs/index.js",
+  "module": "./lib/esm/index.js",
+  "files": [
+    "lib/"
+  ],
+  "private": false,
+  "scripts": {
+    "test": "jest",
+    "test:watch": "jest --watchAll",
+    "build": "npm run clean && tsc -p tsconfig.json && tsc -p tsconfig-cjs.json",
+    "clean": "rimraf lib",
+    "coverage": "jest --coverage",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "start": "tsc -w",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm test && npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fjedi/npm-package-template.git"
+  },
+  "keywords": [
+    "fjedi"
+  ],
+  "author": "Alexander Radyushin <r.alex.andr@ya.ru> (https://fjedi.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fjedi/npm-package-template/issues"
+  },
+  "homepage": "https://github.com/fjedi/npm-package-template#readme",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/expect": "24.3.0",
+    "@types/jest": "26.0.15",
+    "@types/lodash": "4.14.164",
+    "@types/node": "14.14.6",
+    "@typescript-eslint/eslint-plugin": "4.6.1",
+    "@typescript-eslint/parser": "4.6.1",
+    "eslint": "7.12.1",
+    "eslint-config-airbnb-typescript": "12.0.0",
+    "eslint-config-prettier": "6.15.0",
+    "eslint-plugin-import": "2.22.1",
+    "eslint-plugin-prettier": "3.1.4",
+    "husky": "4.3.0",
+    "jest": "26.6.2",
+    "lint-staged": "10.5.1",
+    "prettier": "2.1.2",
+    "rimraf": "3.0.2",
+    "ts-jest": "26.4.3",
+    "typescript": "4.0.5"
+  },
+  "lint-staged": {
+    "*.(js|jsx|ts|tsx)": [
+      "npm run lint:fix",
+      "git add"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  }
+}

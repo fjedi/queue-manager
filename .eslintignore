@@ -1,0 +1,7 @@
+node_modules
+dist
+*.spec.ts
+coverage
+jest.config.js
+lib
+.eslintrc.js

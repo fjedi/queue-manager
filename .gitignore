@@ -1,0 +1,25 @@
+# Meta
+**/.DS_Store
+
+# Logs
+*.log
+npm-debug.log*
+
+# Compiled binary addons (http://nodejs.org/api/addons.html)
+build/Release
+
+# Dependency directories
+node_modules
+
+# Optional npm cache directory
+.npm
+
+# Distribution
+lib
+dist
+
+# Editors
+.idea
+.vscode/
+
+.env
