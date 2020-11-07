@@ -1,9 +1,7 @@
-async function testQueue(job: any) {
-  const messagePrefix = '[TEST_QUEUE] ';
+async function testQueue(job: any): Promise<unknown> {
+  // const messagePrefix = '[TEST_QUEUE] ';
   // const { context, data, attemptsMade } = job;
-
-  console.log(messagePrefix, 'starting...', job?.data);
-  if (!job?.data) {
+  if (!job?.data?.id) {
     return Promise.reject(
       new Error('Invalid "data" value passed to queue-manager instance.add method'),
     );
@@ -12,4 +10,5 @@ async function testQueue(job: any) {
   return Promise.resolve(job.data);
 }
 
+export default testQueue;
 module.exports = testQueue;

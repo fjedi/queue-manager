@@ -32,10 +32,10 @@ export async function createQueue<TContext>(params: QueueProps<TContext>): Promi
   });
   //
   if (typeof processor === 'string') {
-    await queue.process(concurrency, processor);
+    queue.process(concurrency, processor);
   } else {
     // @ts-ignore
-    await queue.process(concurrency, async (job) => processor(Object.assign(job, { context })));
+    queue.process(concurrency, async (job) => processor(Object.assign(job, { context })));
   }
 
   return queue;
