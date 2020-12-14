@@ -1,6 +1,6 @@
 {
   "name": "@fjedi/queue-manager",
-  "version": "1.7.0",
+  "version": "2.0.0",
   "description": "Wrapper around Bull queue-manager",
   "type": "module",
   "main": "./lib/cjs/index.js",
@@ -18,7 +18,7 @@
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
     "start": "tsc -w",
-    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
+    "format": "prettier --write \"src/**/*.ts\" \"src/**/*.cjs\"",
     "prepare": "npm run build",
     "prepublishOnly": "npm test && npm run lint",
     "preversion": "npm run lint",
