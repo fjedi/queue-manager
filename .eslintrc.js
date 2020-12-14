@@ -18,7 +18,6 @@ module.exports = {
     sourceType: 'module',
     jsx: true,
     project: 'tsconfig-cjs.json',
-    extraFileExtensions: ['.cjs'],
   },
   rules: {
     'no-debugger': 'off',
