@@ -38,6 +38,7 @@
   },
   "homepage": "https://github.com/fjedi/queue-manager#readme",
   "dependencies": {
+    "@fjedi/logger": "1.0.2",
     "@types/bluebird": "3.5.33",
     "@types/bull": "3.14.4",
     "@types/lodash": "4.14.165",
