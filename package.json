@@ -1,6 +1,6 @@
 {
   "name": "@fjedi/queue-manager",
-  "version": "5.12.0",
+  "version": "5.13.0",
   "description": "Wrapper around Bull queue-manager",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
@@ -41,7 +41,7 @@
     "@fjedi/logger": "1.0.2",
     "@types/bluebird": "3.5.33",
     "@types/bull": "3.14.4",
-    "@types/lodash": "4.14.166",
+    "@types/lodash": "4.14.167",
     "bluebird": "3.7.2",
     "bull": "3.20.0",
     "lodash": "4.17.20"
