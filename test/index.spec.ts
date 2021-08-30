@@ -45,7 +45,7 @@ describe('Test queue-manager', function () {
     });
     expect(job?.queue).toBeInstanceOf(Bull);
 
-    expect(() => job?.finished()).rejects.toEqual(new Error(TEST_QUEUE_ERROR_MSG));
+    expect(async () => await job?.finished()).rejects.toEqual(new Error(TEST_QUEUE_ERROR_MSG));
   });
 
   it('Should create instance of repeatable/cron-job manager', async function () {
