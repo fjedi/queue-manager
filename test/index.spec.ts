@@ -57,7 +57,9 @@ describe('Test queue-manager', function () {
       processor: require(resolvePath(__dirname, '../src/test-cron-job')),
       concurrency: 1,
       context,
-      every: 1000,
+      repeat: {
+        every: 1000,
+      },
       data: {},
     });
 
