@@ -1,9 +1,16 @@
-import Bull, { Queue, ProcessCallbackFunction, ProcessPromiseFunction, JobInformation } from 'bull';
+import Bull, {
+  Queue,
+  ProcessCallbackFunction,
+  ProcessPromiseFunction,
+  JobInformation,
+  CronRepeatOptions,
+  EveryRepeatOptions,
+} from 'bull';
 import { set } from 'lodash';
 import { each as eachPromise } from 'bluebird';
 import { logger } from '@fjedi/logger';
 
-export type { Queue } from 'bull';
+export type { Queue, CronRepeatOptions, EveryRepeatOptions } from 'bull';
 
 export type QueueJob<TContext> = Bull.Job & { context: TContext };
 
@@ -101,14 +108,14 @@ export async function createQueue<TContext>(params: QueueProps<TContext>): Promi
 
 export type RepeatableJobParams<TContext> = QueueProps<TContext> & {
   jobId: string;
-  every: number;
+  repeat: CronRepeatOptions | EveryRepeatOptions | undefined;
   data?: { [k: string]: unknown };
 };
 
 export async function createRepeatableJob<TContext>(
   params: RepeatableJobParams<TContext>,
 ): Promise<Queue> {
-  const { jobId, processor, context, every, concurrency = 1, data, queueOptions } = params;
+  const { jobId, processor, context, repeat, concurrency = 1, data, queueOptions } = params;
   const repeatableJobQueue = await createQueue({
     name: jobId,
     queueOptions,
@@ -124,9 +131,7 @@ export async function createRepeatableJob<TContext>(
   //
   await repeatableJobQueue.add(data, {
     jobId,
-    repeat: {
-      every,
-    },
+    repeat,
     removeOnComplete: true,
     removeOnFail: true,
   });

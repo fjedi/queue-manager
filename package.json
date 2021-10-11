@@ -1,6 +1,6 @@
 {
   "name": "@fjedi/queue-manager",
-  "version": "5.60.3",
+  "version": "6.0.0",
   "description": "Wrapper around Bull queue-manager",
   "main": "./lib/cjs/index.js",
   "module": "./lib/esm/index.js",
