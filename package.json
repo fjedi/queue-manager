@@ -43,7 +43,7 @@
     "@types/bull": "3.15.8",
     "@types/lodash": "4.14.182",
     "bluebird": "3.7.2",
-    "bull": "4.8.1",
+    "bull": "4.8.2",
     "lodash": "4.17.21"
   },
   "devDependencies": {
