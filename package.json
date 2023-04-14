@@ -41,7 +41,7 @@
     "@fjedi/logger": "1.46.3",
     "@types/bluebird": "3.5.38",
     "@types/bull": "3.15.9",
-    "@types/lodash": "4.14.192",
+    "@types/lodash": "4.14.194",
     "bluebird": "3.7.2",
     "bull": "4.10.4",
     "lodash": "4.17.21"
