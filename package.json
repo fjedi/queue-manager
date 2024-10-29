@@ -47,7 +47,7 @@
     "lodash": "4.17.21"
   },
   "devDependencies": {
-    "@types/expect": "24.3.0",
+    "@types/expect": "24.3.2",
     "@types/jest": "29.5.12",
     "@types/node": "18.19.39",
     "@typescript-eslint/eslint-plugin": "5.62.0",
